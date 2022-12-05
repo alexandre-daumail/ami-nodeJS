@@ -1,0 +1,23 @@
+{
+  "name": "api-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandre-daumail/ami-nodeJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandre-daumail/ami-nodeJS/issues"
+  },
+  "homepage": "https://github.com/alexandre-daumail/ami-nodeJS#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "typescript": "^4.9.3"
+  }
+}
