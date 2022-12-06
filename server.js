@@ -12,6 +12,15 @@ app.search(cors(corsOptions));
 // parse requests of content-type - application/json
 app.use(express.json());
 
+const db = require("./app/models");
+db.sequelize.sync()
+  .then(() => {
+    console.log("Synced db.");
+  })
+  .catch((err) => {
+    console.log("Failed to sync db: " + err.message);
+  });
+  
 // simple route
 app.get('/', (req, res) => {
     res.json({
