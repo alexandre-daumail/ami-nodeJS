@@ -1,23 +1,34 @@
 {
   "name": "api-nodejs",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Node.js Rest Apis with Express, Sequelize & MySQL",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexandre-daumail/ami-nodeJS.git"
+    "url": "git+https://github.com/alexandre-daumail/api-nodeJS.git"
   },
+  "keywords": [
+    "nodejs",
+    "express",
+    "rest",
+    "api",
+    "sequelize",
+    "mysql"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alexandre-daumail/ami-nodeJS/issues"
+    "url": "https://github.com/alexandre-daumail/api-nodeJS/issues"
   },
-  "homepage": "https://github.com/alexandre-daumail/ami-nodeJS#readme",
+  "homepage": "https://github.com/alexandre-daumail/api-nodeJS#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
-    "typescript": "^4.9.3"
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.26.0"
   }
 }
