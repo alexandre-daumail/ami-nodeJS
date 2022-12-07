@@ -22,8 +22,8 @@ db.sequelize.sync()
     console.log("Failed to sync db: " + err.message);
   });
 
-/* // drop the table if it already exists
-db.sequelize.sync({ force: true }).then(() => {
+// drop the table if it already exists
+/* db.sequelize.sync({ force: true }).then(() => {
   console.log("Drop and re-sync db.");
 }); */
   

@@ -2,8 +2,9 @@ module.exports = (sequelize, Sequelize) => {
     const Group = sequelize.define("group", {
       name: {
         type: Sequelize.STRING,
+        allowNull:false,
         validate: {
-          isAlpha: true
+          isAlphanumeric: true
         }
       },
     });

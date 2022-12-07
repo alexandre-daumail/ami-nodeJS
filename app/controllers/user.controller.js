@@ -4,27 +4,10 @@ const Operator = db.Sequelize.Op;
 
 // Create and Save a new User
 exports.register = (req, res) => {
-    // Validate request
-    if (!req.body){
-        res.status(400).send({
-            message: "Please enter an email adress."
-        });
-        return;
-    }
-
-    // Create a User
-    const user = {
-        email: req.body.email,
-        password: req.body.password,
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        groupId: req.body.groupId        
-    }
-
     // Save User in the database
-    User.create(user)
+    User.create(req.body)
         .then(data => {
-            res.send(data);
+            res.status(201).send(data);
         })
         .catch(error => {
             res.status(500).send({
@@ -32,7 +15,6 @@ exports.register = (req, res) => {
                     error.message || "Some error occured while creating the User"
             });
         });
-    
 };
 
 // Retrieve all Users from the database.

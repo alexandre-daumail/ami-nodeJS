@@ -20,7 +20,10 @@ db.sequelize = sequelize;
 db.users = require("./user.model.js")(sequelize, Sequelize);
 db.groups = require("./group.model.js")(sequelize, Sequelize);
 
-db.groups.hasMany(db.users, { as: "users" });
+db.groups.hasMany(db.users, { 
+    as: "users",
+    onDelete: 'cascade'
+ });
 db.users.belongsTo(db.groups, {
     foreignKey: "groupId",
     as: "group",
