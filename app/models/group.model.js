@@ -1,7 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
     const Group = sequelize.define("group", {
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        validate: {
+          isAlpha: true
+        }
       },
     });
   
