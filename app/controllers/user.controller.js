@@ -42,7 +42,10 @@ exports.findAll = (req, res) => {
   const email = req.query.email;
   var condition = email ? { email: { [Operator.like]: `%${email}%` } } : null;
 
-  User.findAll({ where: condition })
+  User.findAll({ 
+    where: condition,
+    attributes: ['firstname', 'lastname'] 
+  })
     .then(data => {
       res.send(data);
     })

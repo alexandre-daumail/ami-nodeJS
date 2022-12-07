@@ -37,7 +37,10 @@ exports.findAll = (req, res) => {
     const name = req.query.name;
     var condition = name ? { name: { [Operator.like]: `%${name}%` } } : null;
   
-    Group.findAll({ where: condition })
+    Group.findAll({ 
+      where: condition,
+      attributes: ["name"] 
+    })
       .then(data => {
         res.send(data);
       })
