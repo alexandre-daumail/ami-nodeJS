@@ -1,9 +1,9 @@
 const db = require('../models');
 const User = db.users;
-const Op = db.Sequelize.Op;
+const Operator = db.Sequelize.Op;
 
 // Create and Save a new User
-exports.create = (res, req) => {
+exports.create = (req, res) => {
     // Validate request
     if (!req.body.email){
         res.status(400).send({
@@ -38,7 +38,7 @@ exports.create = (res, req) => {
 // Retrieve all Users from the database.
 exports.findAll = (req, res) => {
     const email = req.query.email;
-    var condition = email ? { email: { [Op.like]: `%${email}%` } } : null;
+    var condition = email ? { email: { [Operator.like]: `%${email}%` } } : null;
   
     User.findAll({ where: condition })
       .then(data => {
