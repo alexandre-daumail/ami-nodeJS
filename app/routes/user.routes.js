@@ -2,19 +2,13 @@ module.exports = app => {
     const users = require("../controllers/user.controller.js");
   
     var router = require("express").Router();
-  
-    // Registration route
-    router.post("/register", users.register);
-  
+    
     // Retrieve all Users
     router.get("/", users.findAll);
   
     // Retrieve a single User with id
     router.get("/:id", users.findOne);
 
-/*     // login
-    router.get("/login", users.login);
- */  
     // Update a User with id
     router.put("/:id", users.update);
   
