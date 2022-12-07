@@ -3,11 +3,11 @@ const User = db.users;
 const Operator = db.Sequelize.Op;
 
 // Create and Save a new User
-exports.create = (req, res) => {
+exports.register = (req, res) => {
     // Validate request
-    if (!req.body.email){
+    if (!req.body){
         res.status(400).send({
-            message: "Content cannot be empty!"
+            message: "Please enter an email adress."
         });
         return;
     }
@@ -18,7 +18,7 @@ exports.create = (req, res) => {
         password: req.body.password,
         firstname: req.body.firstname,
         lastname: req.body.lastname,
-        
+        groupId: req.body.groupId        
     }
 
     // Save User in the database

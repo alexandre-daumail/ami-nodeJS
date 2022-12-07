@@ -1,5 +1,6 @@
 const db = require('../models');
 const Group = db.groups;
+const User = db.users;
 const Operator = db.Sequelize.Op;
 
 // Create and Save a new Group
@@ -14,8 +15,7 @@ exports.create = (req, res) => {
 
     // Create a Group
     const group = {
-        name: req.body.name,
-       
+        name: req.body.name       
     }
 
     // Save Group in the database
@@ -53,7 +53,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    Group.findByPk(id)
+    Group.findByPk(id, { include: ["users"] })
       .then(data => {
         if (data) {
           res.send(data);
@@ -135,4 +135,15 @@ exports.deleteAll = (req, res) => {
               err.message || "Some error occurred while removing all Groups."
           });
         });
+};
+
+// Get the users for a given group
+exports.findTutorialById = (tutorialId) => {
+  return Tutorial.findByPk(tutorialId, { include: ["comments"] })
+    .then((tutorial) => {
+      return tutorial;
+    })
+    .catch((err) => {
+      console.log(">> Error while finding tutorial: ", err);
+    });
 };
