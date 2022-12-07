@@ -3,7 +3,7 @@ module.exports = app => {
   
     var router = require("express").Router();
   
-    // Create a new Tutorial
+    // Create a new User
     router.post("/", users.create);
   
     // Retrieve all Users
@@ -12,10 +12,10 @@ module.exports = app => {
     // Retrieve a single User with id
     router.get("/:id", users.findOne);
   
-    // Update a Users with id
+    // Update a User with id
     router.put("/:id", users.update);
   
-    // Delete a Users with id
+    // Delete a User with id
     router.delete("/:id", users.delete);
   
     // Delete all Users
