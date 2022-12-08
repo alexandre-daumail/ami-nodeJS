@@ -6,10 +6,13 @@ module.exports = app => {
     // Create a new Group
     router.post("/", groups.create);
   
-    // Retrieve all Groups
-    router.get("/", groups.findAll);
+    // List Groups
+    router.get("/", groups.findAllGroups);
+
+    // List Groups with users collections
+    router.get("/users", groups.findAllGroupsUsers);
   
-    // Retrieve a single Group with id
+    // Get a single Group
     router.get("/:id", groups.findOne);
   
     // Update a Group with id
