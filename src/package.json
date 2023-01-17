@@ -1,0 +1,43 @@
+{
+  "name": "api",
+  "description": "An API with node.js",
+  "version": "1.0.0",
+  "main": "./src/server",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandre-daumail/app-mobile-chat.git"
+  },
+  "keywords": [
+    "API",
+    "Express",
+    "Node",
+    "La-plateforme"
+  ],
+  "author": "Rémi LOPEZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandre-daumail/app-mobile-chat/issues"
+  },
+  "homepage": "https://github.com/alexandre-daumail/app-mobile-chat#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jest": "^29.3.1",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.26.0",
+    "socket.io": "^4.5.4"
+  },
+  "scripts": {
+    "dev": "nodemon --watch src -e js,json --exec \"node ./src/server\"",
+    "build": "tsup ./src/server --format cjs --clean",
+    "start": "node ./src/server",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "supertest": "^6.3.3"
+  }
+}
